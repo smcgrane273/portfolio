@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>New Line</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #F3EBDD;
+      }
+      canvas { display: block; }
+    </style>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js"></script>
+    <script>
+      const BG = '#F3EBDD';
+      const LINE = '#2E2E2E';
+      const POINTS = 420;
+
+      let t = 0;
+      let shapes = [];
+      let currentShape = null;
+      let targetShape = null;
+      let morph = 0;
+      let morphSpeed = 0.0045;
+      let nextShiftAt = 0;
+      let canvasEl;
+      let recorder = null;
+      let recordChunks = [];
+      let isRecording = false;
+      const RECORD_MS = 12000;
+
+      function setup() {
+        canvasEl = createCanvas(windowWidth, windowHeight);
+        noFill();
+        buildShapes();
+        currentShape = resampleShape(random(shapes));
+        targetShape = resampleShape(random(shapes));
+        scheduleShift();
+      }
+
+      function buildShapes() {
+        shapes = [
+          { name: 'bird', closed: false, points: [[0.08,0.6],[0.28,0.42],[0.5,0.6],[0.72,0.42],[0.92,0.6]] },
+          { name: 'plane', closed: true, points: [[0.15,0.55],[0.4,0.55],[0.48,0.45],[0.52,0.45],[0.6,0.55],[0.85,0.55],[0.72,0.6],[0.62,0.65],[0.6,0.8],[0.5,0.8],[0.48,0.65],[0.2,0.65]] },
+          { name: 'apple', closed: true, points: [[0.5,0.22],[0.44,0.26],[0.38,0.34],[0.36,0.48],[0.4,0.64],[0.5,0.75],[0.6,0.64],[0.64,0.48],[0.62,0.34],[0.56,0.26],[0.5,0.22],[0.52,0.16],[0.6,0.1]] },
+          { name: 'hat', closed: true, points: [[0.2,0.6],[0.35,0.58],[0.4,0.4],[0.6,0.4],[0.65,0.58],[0.8,0.6],[0.78,0.66],[0.22,0.66]] },
+          { name: 'house', closed: true, points: [[0.2,0.65],[0.2,0.4],[0.5,0.2],[0.8,0.4],[0.8,0.65],[0.2,0.65]] },
+          { name: 'cat', closed: true, points: [[0.3,0.7],[0.3,0.5],[0.36,0.42],[0.42,0.5],[0.5,0.42],[0.58,0.5],[0.62,0.7],[0.7,0.78],[0.62,0.84],[0.48,0.82],[0.36,0.78]] },
+          { name: 'chair', closed: true, points: [[0.3,0.75],[0.3,0.4],[0.6,0.4],[0.6,0.75],[0.54,0.75],[0.54,0.9],[0.46,0.9],[0.46,0.75]] },
+          { name: 'boat', closed: true, points: [[0.2,0.68],[0.8,0.68],[0.7,0.78],[0.3,0.78],[0.2,0.68],[0.45,0.68],[0.45,0.35],[0.6,0.55],[0.45,0.55]] },
+          { name: 'carrot', closed: true, points: [[0.5,0.2],[0.44,0.3],[0.4,0.45],[0.38,0.6],[0.5,0.82],[0.62,0.6],[0.6,0.45],[0.56,0.3],[0.5,0.2],[0.48,0.12],[0.52,0.12]] },
+          { name: 'infinity', closed: true, points: [[0.25,0.55],[0.35,0.4],[0.5,0.4],[0.65,0.4],[0.75,0.55],[0.65,0.7],[0.5,0.7],[0.35,0.7],[0.25,0.55]] },
+          { name: 's', closed: false, points: [[0.75,0.32],[0.6,0.22],[0.4,0.26],[0.35,0.42],[0.55,0.5],[0.7,0.6],[0.62,0.76],[0.42,0.78],[0.25,0.68]] },
+          { name: 'planet', closed: true, points: [[0.25,0.55],[0.38,0.38],[0.58,0.38],[0.75,0.55],[0.58,0.72],[0.38,0.72],[0.25,0.55],[0.2,0.48],[0.8,0.48],[0.76,0.62],[0.24,0.62]] },
+          { name: 'frog', closed: true, points: [[0.25,0.65],[0.3,0.5],[0.38,0.45],[0.46,0.5],[0.54,0.45],[0.62,0.5],[0.7,0.65],[0.62,0.78],[0.5,0.82],[0.38,0.78]] },
+          { name: 'coffee', closed: true, points: [[0.3,0.65],[0.32,0.4],[0.6,0.4],[0.62,0.65],[0.55,0.65],[0.55,0.8],[0.45,0.8],[0.45,0.65],[0.65,0.5],[0.78,0.55],[0.72,0.68],[0.6,0.62]] }
+        ];
+      }
+
+      function scheduleShift() {
+        nextShiftAt = millis() + random(2800, 5200);
+        morphSpeed = random(0.004, 0.007);
+      }
+
+      function draw() {
+        background(BG);
+
+        if (millis() > nextShiftAt) {
+          currentShape = targetShape;
+          targetShape = resampleShape(random(shapes));
+          morph = 0;
+          scheduleShift();
+        }
+        morph = min(1, morph + morphSpeed);
+
+        const w = map(noise(t * 0.03 + 10), 0, 1, 1.4, 4.2);
+        strokeWeight(w);
+        stroke(LINE);
+
+        const eased = easeInOut(morph);
+        beginShape();
+        for (let i = 0; i < POINTS; i++) {
+          const a = currentShape[i];
+          const b = targetShape[i];
+          let x = lerp(a.x, b.x, eased);
+          let y = lerp(a.y, b.y, eased);
+
+          const drift = map(noise(i * 0.018, t * 1.1), 0, 1, -1.8, 1.8);
+          x += drift * 3;
+          y += map(noise(i * 0.018 + 5, t * 1.1), 0, 1, -1.8, 1.8) * 3;
+
+          curveVertex(x, y);
+        }
+        endShape();
+
+        t += 0.012;
+
+        drawRecordDot();
+      }
+
+      function resampleShape(shape) {
+        const pts = shape.points.map(p => ({
+          x: lerp(width * 0.18, width * 0.82, p[0]),
+          y: lerp(height * 0.2, height * 0.82, p[1])
+        }));
+
+        const closed = shape.closed;
+        const path = closed ? pts.concat([pts[0]]) : pts;
+        const lengths = [0];
+        let total = 0;
+        for (let i = 1; i < path.length; i++) {
+          total += dist(path[i-1].x, path[i-1].y, path[i].x, path[i].y);
+          lengths.push(total);
+        }
+
+        const resampled = [];
+        for (let i = 0; i < POINTS; i++) {
+          const target = (total * i) / (POINTS - 1);
+          let seg = 1;
+          while (seg < lengths.length && lengths[seg] < target) seg++;
+          const prev = lengths[seg - 1];
+          const next = lengths[seg];
+          const t = (target - prev) / max(1e-6, next - prev);
+          const p0 = path[seg - 1];
+          const p1 = path[seg];
+          resampled.push({ x: lerp(p0.x, p1.x, t), y: lerp(p0.y, p1.y, t) });
+        }
+        return resampled;
+      }
+
+      function drawRecordDot() {
+        const x = width * 0.95;
+        const y = height * 0.05;
+        noStroke();
+        fill(LINE);
+        ellipse(x, y, 8, 8);
+        noFill();
+      }
+
+      function easeInOut(v) {
+        return v < 0.5 ? 2 * v * v : 1 - pow(-2 * v + 2, 2) / 2;
+      }
+
+      function windowResized() {
+        resizeCanvas(windowWidth, windowHeight);
+        currentShape = resampleShape(random(shapes));
+        targetShape = resampleShape(random(shapes));
+      }
+
+      function doubleClicked() {
+        if (isInRecordCorner(mouseX, mouseY)) {
+          startRecording();
+          return false;
+        }
+        return false;
+      }
+
+      function isInRecordCorner(px, py) {
+        const dx = px - width * 0.95;
+        const dy = py - height * 0.05;
+        return (dx * dx + dy * dy) <= 12 * 12;
+      }
+
+      function startRecording() {
+        if (isRecording || !canvasEl) return;
+        const stream = canvasEl.elt.captureStream(60);
+        recorder = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9' });
+        recordChunks = [];
+        recorder.ondataavailable = (e) => {
+          if (e.data.size > 0) recordChunks.push(e.data);
+        };
+        recorder.onstop = saveRecording;
+        recorder.start();
+        isRecording = true;
+
+        setTimeout(() => {
+          if (recorder && recorder.state !== 'inactive') recorder.stop();
+          isRecording = false;
+        }, RECORD_MS);
+      }
+
+      function saveRecording() {
+        const blob = new Blob(recordChunks, { type: 'video/webm' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'new-line-12s.webm';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      }
+    </script>
+  </body>
+</html>

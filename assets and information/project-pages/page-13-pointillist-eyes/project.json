@@ -1,0 +1,43 @@
+{
+  "page": 13,
+  "title": "Pointillist Eyes",
+  "folder": "page-13-pointillist-eyes",
+  "source_project_name": "blink final copy",
+  "source_path": "/Users/sophie/Documents/updated information (cleaned 4.27.26) /HW 2.9.25/blink final copy",
+  "source_status": "Original standalone project left untouched. A separate source reference copy was placed in this folder.",
+  "source_git_state": "not a git repository",
+  "source_copy": [
+    "source/index.original-copy.html",
+    "source/sketch.original-copy.js",
+    "source/style.original-copy.css",
+    "source/README.original-copy.md"
+  ],
+  "medium": "p5.js pointillist image sketch with blink interaction",
+  "suggested_subtitle": "A pointillist browser portrait with a blink interaction",
+  "primary_visual": "screenshots/pointillist-eyes-wide-hero.jpg",
+  "archive_thumbnail": "screenshots/pointillist-eyes-archive-thumb.jpg",
+  "images": [
+    "images/eyes.png",
+    "images/eyes-closed.png"
+  ],
+  "screenshots": [
+    "screenshots/pointillist-eyes-wide-hero.jpg",
+    "screenshots/pointillist-eyes-archive-thumb.jpg",
+    "screenshots/pointillist-eyes-open-still.jpg",
+    "screenshots/pointillist-eyes-closed-still.jpg",
+    "screenshots/pointillist-eyes-closed-wide.jpg",
+    "screenshots/pointillist-eyes-open-closed-study.jpg"
+  ],
+  "key_interactions": [
+    "Image is sampled into a field of dots.",
+    "Darker pixels become larger dots.",
+    "Click triggers a short blink by swapping to the closed-eye image.",
+    "D toggles density mode.",
+    "J toggles subtle sample jitter."
+  ],
+  "future_page_notes": [
+    "Good candidate for an optical/interactivity archive case study.",
+    "Pair open and closed states on the future project page.",
+    "Consider recording a short blink GIF or video later."
+  ]
+}

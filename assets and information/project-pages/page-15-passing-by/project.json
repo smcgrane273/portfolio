@@ -1,0 +1,22 @@
+{
+  "page": 15,
+  "title": "Passing By",
+  "folder": "page-15-passing-by",
+  "source_figma": "https://www.figma.com/design/EjmeloRJISPRZNA1Yt8pGs/Portfolio-Dev--Main-works-and-research?node-id=128-6571",
+  "medium": "Photo book",
+  "subtitle": "Photo Book",
+  "focus": "Movement / Type / Image",
+  "status": "Draft project page created from provided Figma layout screenshot and exported assets. Body copy is intentionally placeholder pending final text.",
+  "primary_visual": "images/passing-by-hero-stack.png",
+  "archive_thumbnail": "images/passing-by-moon-car.png",
+  "layout_reference": "screenshots/passing-by-figma-layout.png",
+  "images": [
+    "images/passing-by-hero-stack.png",
+    "images/passing-by-photo-book-spread.png",
+    "images/passing-by-road-blur-red.png",
+    "images/passing-by-horses-frame.png",
+    "images/passing-by-moon-car.png",
+    "images/passing-by-red-horizon-wide.png"
+  ],
+  "copy_placeholder": "Copy to be updated here."
+}

@@ -1,0 +1,61 @@
+{
+  "page": 14,
+  "title": "Clinton Hill Tree Map",
+  "folder": "page-14-clinton-hill-tree-map",
+  "source_project_name": "update drfat one - 2026-05-13 02-24-42 PM EDT",
+  "source_path": "/Users/sophie/Documents/updated information (cleaned 4.27.26) /street tree/clinton hill tree map/update drfat one - 2026-05-13 02-24-42 PM EDT",
+  "source_status": "Original standalone project left untouched. A separate source reference copy was placed in this folder.",
+  "source_git_commit": "d06b41a",
+  "source_git_state": "clean",
+  "source_copy": [
+    "source/index.original-copy.html",
+    "source/script.original-copy.js",
+    "source/style.original-copy.css"
+  ],
+  "data": [
+    "data/trees.original-copy.js",
+    "data/tree-summary.json"
+  ],
+  "medium": "Leaflet/CARTO interactive web map with local street tree census data",
+  "suggested_subtitle": "An interactive map of 2,792 street trees in Clinton Hill, Brooklyn",
+  "primary_visual": "screenshots/clinton-hill-tree-map-wide-hero.jpg",
+  "archive_thumbnail": "screenshots/clinton-hill-tree-map-archive-thumb.jpg",
+  "screenshots": [
+    "screenshots/clinton-hill-tree-map-wide-hero.jpg",
+    "screenshots/clinton-hill-tree-map-archive-thumb.jpg",
+    "screenshots/clinton-hill-tree-map-panel-still.jpg",
+    "screenshots/clinton-hill-tree-map-data-study.jpg"
+  ],
+  "data_snapshot": {
+    "tree_records": 2792,
+    "alive": 2686,
+    "stump": 69,
+    "dead": 37,
+    "good_health": 2286,
+    "fair_health": 334,
+    "poor_health": 66,
+    "unknown_health": 106,
+    "top_species": [
+      "London planetree",
+      "honeylocust",
+      "pin oak",
+      "ginkgo",
+      "Callery pear",
+      "littleleaf linden",
+      "Sophora"
+    ]
+  },
+  "key_interactions": [
+    "Tree records are mapped as circle markers.",
+    "Marker color encodes health/status.",
+    "Marker size responds to trunk diameter.",
+    "Hover shows a species tooltip.",
+    "Clicking a marker populates the selected-tree detail panel.",
+    "Markers cluster when zoomed out."
+  ],
+  "future_page_notes": [
+    "Good candidate for a civic data visualization case study.",
+    "Use static generated stills first if live map dependencies are not desired.",
+    "Consider showing the data summary and selected-tree panel as supporting details."
+  ]
+}

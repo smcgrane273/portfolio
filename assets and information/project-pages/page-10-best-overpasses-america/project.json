@@ -1,0 +1,48 @@
+{
+  "page": 10,
+  "title": "The Highway Book",
+  "folder": "page-10-best-overpasses-america",
+  "source_project_name": "finalcopybestoverpasses(may26)",
+  "source_path": "/Users/sophie/Documents/updated information (cleaned 4.27.26) /highwaybook/finalcopybestoverpasses(may26)",
+  "source_status": "Original standalone project left untouched. A separate source reference copy was placed in this folder.",
+  "source_copy": [
+    "source/index.original-copy.html",
+    "source/overpasses-booklet.original-copy.html",
+    "source/styles.original-copy.css",
+    "source/script.original-copy.js",
+    "source/README.original-copy.md"
+  ],
+  "medium": "Self-contained HTML/CSS/JS website with print booklet PDF",
+  "suggested_subtitle": "Ten American highway interchanges arranged as an editorial image book",
+  "primary_visual": "screenshots/best-overpasses-wide-hero.jpg",
+  "archive_thumbnail": "screenshots/best-overpasses-archive-thumb.jpg",
+  "supporting_visuals": [
+    "screenshots/best-overpasses-contact-sheet.jpg"
+  ],
+  "pdf": "pdf/overpasses-booklet.pdf",
+  "images": [
+    "images/high-five-interchange.png",
+    "images/judge-harry-pregerson-interchange.png",
+    "images/four-level-interchange.png",
+    "images/tom-moreland-spaghetti-junction.png",
+    "images/i10-i405-interchange.png",
+    "images/stack-interchange-phoenix.png",
+    "images/marquette-interchange.png",
+    "images/newark-airport-interchange.png",
+    "images/springfield-interchange-mixing-bowl.png",
+    "images/i10-loop-1604-interchange.png"
+  ],
+  "key_interactions": [
+    "Previous and next navigation through ten interchange plates.",
+    "Left and right keyboard navigation.",
+    "Caption metadata for location, highways, and interchange type.",
+    "Per-plate source link.",
+    "Separate booklet layout and exported PDF."
+  ],
+  "future_page_notes": [
+    "Good candidate for an archive/editorial infrastructure case study.",
+    "Use the wide hero as a quiet opening image.",
+    "Consider showing the contact sheet to reveal the full system.",
+    "Include the booklet PDF as a supporting object when the final page is built."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "page": 11,
+  "title": "The Looking Glass",
+  "folder": "page-11-the-looking-glass",
+  "source_project_name": "the looking glass",
+  "source_path": "/Users/sophie/Documents/updated information (cleaned 4.27.26) /portfolio and play 4.3.26/the looking glass",
+  "source_status": "Original standalone project left untouched. A separate source reference copy was placed in this folder.",
+  "source_git_commit": "7e6aa51",
+  "source_git_state_observed": [
+    "M index.html",
+    "?? .DS_Store",
+    "?? p5-sketch.js"
+  ],
+  "source_copy": [
+    "source/index.original-copy.html",
+    "source/p5-sketch.original-copy.js"
+  ],
+  "medium": "Interactive browser mirror using camera access, canvas, and fog-clearing gestures",
+  "suggested_subtitle": "An interactive fogged mirror for the browser",
+  "primary_visual": "screenshots/looking-glass-wide-hero.jpg",
+  "archive_thumbnail": "screenshots/looking-glass-archive-thumb.jpg",
+  "screenshots": [
+    "screenshots/looking-glass-wide-hero.jpg",
+    "screenshots/looking-glass-archive-thumb.jpg",
+    "screenshots/looking-glass-fogged-still.jpg",
+    "screenshots/looking-glass-wiped-still.jpg"
+  ],
+  "key_interactions": [
+    "Requests and mirrors the user-facing camera.",
+    "Covers the camera feed with a generated fog layer.",
+    "Pointer or touch dragging wipes the fog away.",
+    "Resize repaints the atmospheric layers."
+  ],
+  "future_page_notes": [
+    "Good candidate for an interactive/process archive case study.",
+    "Use the fogged and wiped stills as an initial before/after visual rhythm.",
+    "Capture a short video or GIF later to show the wiping interaction.",
+    "Mention camera permissions clearly if the live piece is ever embedded."
+  ]
+}

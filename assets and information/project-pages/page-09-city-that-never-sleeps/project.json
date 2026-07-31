@@ -1,0 +1,31 @@
+{
+  "page": 9,
+  "title": "City That Never Sleeps",
+  "folder": "page-09-city-that-never-sleeps",
+  "source_project_name": "test.citythatsleeps5.15.25",
+  "source_path": "/Users/sophie/Documents/updated information (cleaned 4.27.26) /HW 2.9.25/test.citythatsleeps5.15.25",
+  "source_status": "Original standalone project left untouched. A source reference copy was placed in this folder.",
+  "source_copy": "source/index.original-copy.html",
+  "source_git_commit": "070b06f Initial commit",
+  "medium": "Single-file p5.js interactive website sketch",
+  "suggested_subtitle": "Interactive city-light study",
+  "primary_visual": "screenshots/city-that-never-sleeps-still-02-awake-windows.jpg",
+  "archive_thumbnail": "screenshots/city-that-never-sleeps-archive-thumb.jpg",
+  "screenshots": [
+    "screenshots/city-that-never-sleeps-still-01-night-grid.jpg",
+    "screenshots/city-that-never-sleeps-still-02-awake-windows.jpg",
+    "screenshots/city-that-never-sleeps-still-03-wide-skyline.jpg",
+    "screenshots/city-that-never-sleeps-archive-thumb.jpg"
+  ],
+  "key_interactions": [
+    "Animated windows slowly transition between off and on states.",
+    "Double-clicking a window toggles its light state.",
+    "Double-clicking the moon records a five-second canvas video.",
+    "Resizing the browser regenerates the procedural skyline."
+  ],
+  "future_page_notes": [
+    "Good candidate for a technology/process archive case study.",
+    "Emphasize interaction, ambient city rhythm, and procedural systems.",
+    "Consider adding a short screen recording later from the original standalone project."
+  ]
+}

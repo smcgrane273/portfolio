@@ -1,0 +1,85 @@
+{
+  "count": 2792,
+  "health": [
+    [
+      "Good",
+      2286
+    ],
+    [
+      "Fair",
+      334
+    ],
+    [
+      "Unknown",
+      106
+    ],
+    [
+      "Poor",
+      66
+    ]
+  ],
+  "status": [
+    [
+      "Alive",
+      2686
+    ],
+    [
+      "Stump",
+      69
+    ],
+    [
+      "Dead",
+      37
+    ]
+  ],
+  "species": [
+    [
+      "London planetree",
+      449
+    ],
+    [
+      "honeylocust",
+      340
+    ],
+    [
+      "pin oak",
+      299
+    ],
+    [
+      "ginkgo",
+      192
+    ],
+    [
+      "Callery pear",
+      150
+    ],
+    [
+      "littleleaf linden",
+      146
+    ],
+    [
+      "Sophora",
+      139
+    ],
+    [
+      "Unknown",
+      106
+    ],
+    [
+      "Japanese zelkova",
+      92
+    ],
+    [
+      "Norway maple",
+      87
+    ]
+  ],
+  "lat_range": [
+    40.6818989,
+    40.69863385
+  ],
+  "lon_range": [
+    -73.97069146,
+    -73.95872716
+  ]
+}

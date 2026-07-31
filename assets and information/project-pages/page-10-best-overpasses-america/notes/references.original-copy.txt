@@ -1,0 +1,59 @@
+high-five-interchange.png
+Location: High Five Interchange, Dallas, Texas
+Highways: I-635 and US-75
+Type: 5-level stack
+Source URL: https://maps.google.com/?q=High+Five+Interchange+Dallas
+
+judge-harry-pregerson-interchange.png
+Location: Judge Harry Pregerson Interchange, Los Angeles, California
+Highways: I-105 and I-110
+Type: Multi-level stack
+Source URL: https://maps.google.com/?q=Judge+Harry+Pregerson+Interchange
+
+four-level-interchange.png
+Location: Four Level Interchange, Los Angeles, California
+Highways: US-101 and I-110
+Type: 4-level stack
+Source URL: https://maps.google.com/?q=Four+Level+Interchange+Los+Angeles
+
+tom-moreland-spaghetti-junction.png
+Location: Tom Moreland Interchange (Spaghetti Junction), Atlanta, Georgia
+Highways: I-85 and I-285
+Type: Complex stack
+Source URL: https://maps.google.com/?q=Spaghetti+Junction+Atlanta
+
+i10-i405-interchange.png
+Location: I-10 / I-405 Interchange, Los Angeles, California
+Highways: I-10 and I-405
+Type: Major interchange
+Source URL: https://maps.google.com/?q=I-10+I-405+Interchange
+
+stack-interchange-phoenix.png
+Location: Stack Interchange, Phoenix, Arizona
+Highways: I-10, SR-51, and Loop 202
+Type: 4-level stack
+Source URL: https://maps.google.com/?q=Phoenix+Stack+Interchange
+
+marquette-interchange.png
+Location: Marquette Interchange, Milwaukee, Wisconsin
+Highways: I-94, I-43, and I-794
+Type: Multi-level
+Source URL: https://maps.google.com/?q=Marquette+Interchange
+
+newark-airport-interchange.png
+Location: Newark Airport Interchange, Newark, New Jersey
+Highways: I-95, I-78, and US-1/9
+Type: Complex interchange
+Source URL: https://maps.google.com/?q=Newark+Airport+Interchange
+
+springfield-interchange-mixing-bowl.png
+Location: Springfield Interchange (Mixing Bowl), Springfield, Virginia
+Highways: I-95, I-495, and I-395
+Type: Multi-level
+Source URL: https://maps.google.com/?q=Springfield+Mixing+Bowl
+
+i10-loop-1604-interchange.png
+Location: I-10 / Loop 1604 Interchange, San Antonio, Texas
+Highways: I-10 and Loop 1604
+Type: Stack interchange
+Source URL: https://maps.google.com/?q=I-10+Loop+1604+Interchange+San+Antonio

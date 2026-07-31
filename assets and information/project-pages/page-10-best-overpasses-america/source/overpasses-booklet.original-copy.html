@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Highway Book: Overpasses Booklet</title>
+    <style>
+      @page {
+        margin: 0.7in;
+        size: letter portrait;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        color: #111111;
+      }
+      body {
+        font-family: "Times New Roman", Times, serif;
+      }
+      main {
+        max-width: 44rem;
+        margin: 0 auto;
+        padding: 0.3in 0 0.5in;
+      }
+      .title-page {
+        min-height: 8.5in;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.8rem;
+        page-break-after: always;
+      }
+      h1,
+      p {
+        margin: 0;
+      }
+      .kicker {
+        font-size: 0.68rem;
+        line-height: 1;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #6f6f6f;
+      }
+      .title-page h1 {
+        font-size: 2.35rem;
+        font-weight: normal;
+        line-height: 1.05;
+      }
+      .intro {
+        max-width: 30rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+      .entry {
+        page-break-after: always;
+      }
+      .entry:last-of-type {
+        page-break-after: auto;
+      }
+      .entry-image {
+        display: block;
+        width: 100%;
+        max-width: 44rem;
+        max-height: 5.3in;
+        object-fit: contain;
+        margin: 0 auto;
+      }
+      .caption {
+        margin-top: 0.7rem;
+        font-size: 0.76rem;
+        line-height: 1.55;
+        letter-spacing: 0.01em;
+      }
+      .entry-note {
+        margin-top: 0.85rem;
+        font-size: 0.82rem;
+        line-height: 1.55;
+      }
+      .entry-note span {
+        color: #6f6f6f;
+      }
+      .footer-note {
+        margin-top: 1.6rem;
+        font-size: 0.72rem;
+        line-height: 1.45;
+        color: #6f6f6f;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="title-page">
+        <p class="kicker">Collected Plates</p>
+        <h1>The Highway Book</h1>
+        <p class="intro">
+          A print-friendly record of ten American overpasses and interchanges using the same
+          restrained composition, typography, and editorial tone as the website version.
+        </p>
+      </section>
+      <section class="entry">
+        <img class="entry-image" src="images/high-five-interchange.png" alt="High Five Interchange, Dallas, Texas">
+        <p class="caption">01 / High Five Interchange, Dallas, Texas. I-635 and US-75. 5-level stack.</p>
+        <p class="entry-note"><span>Source:</span> https://maps.google.com/?q=High+Five+Interchange+Dallas</p>
+      </section>
+      <section class="entry">
+        <img class="entry-image" src="images/judge-harry-pregerson-interchange.png" alt="Judge Harry Pregerson Interchange, Los Angeles, California">
+        <p class="caption">02 / Judge Harry Pregerson Interchange, Los Angeles, California. I-105 and I-110. Multi-level stack.</p>
+        <p class="entry-note"><span>Source:</span> https://maps.google.com/?q=Judge+Harry+Pregerson+Interchange</p>
+      </section>
+      <section class="entry">
+        <img class="entry-image" src="images/four-level-interchange.png" alt="Four Level Interchange, Los Angeles, California">
+        <p class="caption">03 / Four Level Interchange, Los Angeles, California. US-101 and I-110. 4-level stack.</p>
+        <p class="entry-note"><span>Source:</span> https://maps.google.com/?q=Four+Level+Interchange+Los+Angeles</p>
+      </section>
+      <section class="entry">
+        <img class="entry-image" src="images/tom-moreland-spaghetti-junction.png" alt="Tom Moreland Interchange, Atlanta, Georgia">
+        <p class="caption">04 / Tom Moreland Interchange (Spaghetti Junction), Atlanta, Georgia. I-85 and I-285. Complex stack.</p>
+        <p class="entry-note"><span>Source:</span> https://maps.google.com/?q=Spaghetti+Junction+Atlanta</p>
+      </section>
+      <section class="entry">
+        <img class="entry-image" src="images/i10-i405-interchange.png" alt="I-10 / I-405 Interchange, Los Angeles, California">
+        <p class="caption">05 / I-10 / I-405 Interchange, Los Angeles, California. I-10 and I-405. Major interchange.</p>
+        <p class="entry-note"><span>Source:</span> https://maps.google.com/?q=I-10+I-405+Interchange</p>
+      </section>
+      <section class="entry">
+        <img class="entry-image" src="images/stack-interchange-phoenix.png" alt="Stack Interchange, Phoenix, Arizona">
+        <p class="caption">06 / Stack Interchange, Phoenix, Arizona. I-10, SR-51, and Loop 202. 4-level stack.</p>
+        <p class="entry-note"><span>Source:</span> https://maps.google.com/?q=Phoenix+Stack+Interchange</p>
+      </section>
+      <section class="entry">
+        <img class="entry-image" src="images/marquette-interchange.png" alt="Marquette Interchange, Milwaukee, Wisconsin">
+        <p class="caption">07 / Marquette Interchange, Milwaukee, Wisconsin. I-94, I-43, and I-794. Multi-level.</p>
+        <p class="entry-note"><span>Source:</span> https://maps.google.com/?q=Marquette+Interchange</p>
+      </section>
+      <section class="entry">
+        <img class="entry-image" src="images/newark-airport-interchange.png" alt="Newark Airport Interchange, Newark, New Jersey">
+        <p class="caption">08 / Newark Airport Interchange, Newark, New Jersey. I-95, I-78, and US-1/9. Complex interchange.</p>
+        <p class="entry-note"><span>Source:</span> https://maps.google.com/?q=Newark+Airport+Interchange</p>
+      </section>
+      <section class="entry">
+        <img class="entry-image" src="images/springfield-interchange-mixing-bowl.png" alt="Springfield Interchange, Springfield, Virginia">
+        <p class="caption">09 / Springfield Interchange (Mixing Bowl), Springfield, Virginia. I-95, I-495, and I-395. Multi-level.</p>
+        <p class="entry-note"><span>Source:</span> https://maps.google.com/?q=Springfield+Mixing+Bowl</p>
+      </section>
+      <section class="entry">
+        <img class="entry-image" src="images/i10-loop-1604-interchange.png" alt="I-10 / Loop 1604 Interchange, San Antonio, Texas">
+        <p class="caption">10 / I-10 / Loop 1604 Interchange, San Antonio, Texas. I-10 and Loop 1604. Stack interchange.</p>
+        <p class="entry-note"><span>Source:</span> https://maps.google.com/?q=I-10+Loop+1604+Interchange+San+Antonio</p>
+      </section>
+      <p class="footer-note">Prepared from the updated overpass image-and-information set.</p>
+    </main>
+  </body>
+</html>

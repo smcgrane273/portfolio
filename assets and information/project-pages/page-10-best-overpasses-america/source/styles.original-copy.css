@@ -1,0 +1,156 @@
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #ffffff;
+  color: #111111;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+
+button,
+a {
+  color: inherit;
+}
+
+.book {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(3.5rem, 1fr) minmax(0, 54rem) minmax(3.5rem, 1fr);
+  align-items: center;
+}
+
+.spread {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem 5rem;
+}
+
+.plate {
+  margin: 0;
+  width: min(100%, 44rem);
+  text-align: center;
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.plate.is-transitioning {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+#photo {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 67vh;
+  margin: 0 auto;
+  object-fit: contain;
+  box-shadow: none;
+}
+
+.caption {
+  margin-top: 1rem;
+}
+
+#location {
+  margin: 0;
+  font-size: 0.76rem;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+}
+
+.turn-zone {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  align-self: stretch;
+  cursor: pointer;
+  padding: 0;
+}
+
+.turn-zone:focus-visible,
+.meta-toggle:focus-visible,
+.meta-panel a:focus-visible {
+  outline: 1px solid #b7b7b7;
+  outline-offset: 3px;
+}
+
+.meta {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.45rem;
+}
+
+.meta-toggle {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  font-size: 0.68rem;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #6f6f6f;
+}
+
+.meta-panel {
+  display: grid;
+  gap: 0.35rem;
+  justify-items: end;
+}
+
+.meta-panel p,
+.meta-panel a {
+  margin: 0;
+  font-size: 0.68rem;
+  line-height: 1.35;
+  color: #6f6f6f;
+  text-decoration: none;
+}
+
+.meta-panel a:hover {
+  color: #111111;
+}
+
+@media (max-width: 720px) {
+  .book {
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 100%) minmax(1rem, 1fr);
+  }
+
+  .spread {
+    padding: 2.5rem 0.9rem 4.25rem;
+  }
+
+  #photo {
+    max-height: 58vh;
+  }
+
+  #location {
+    font-size: 0.72rem;
+  }
+
+  .meta {
+    right: 0.9rem;
+    bottom: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plate {
+    transition: none;
+  }
+}

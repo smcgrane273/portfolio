@@ -1,0 +1,66 @@
+[
+  {
+    "page": 1,
+    "title": "Dark Room Trash",
+    "folder": "project-pages/page-01-dark-room-trash",
+    "subtitle": "A Study in Discard",
+    "role_or_note": "This book is a curation of the contents of a darkroom trash can. Neither",
+    "images": 3
+  },
+  {
+    "page": 2,
+    "title": "Trinity in 50",
+    "folder": "project-pages/page-02-trinity-in-50",
+    "subtitle": "Detail Studio",
+    "role_or_note": "Trinity in 50 tells the story of Trinity College Dublin through fifty",
+    "images": 3
+  },
+  {
+    "page": 3,
+    "title": "Ergonomic Hammer Art",
+    "folder": "project-pages/page-03-ergonomic-hammer-art",
+    "subtitle": "Sculputre TA, Oberlin",
+    "role_or_note": "During my time as the sculpture TA where I oversaw the sculpture",
+    "images": 5
+  },
+  {
+    "page": 4,
+    "title": "Ramy Brook",
+    "folder": "project-pages/page-04-ramy-brook",
+    "subtitle": "Marketing Intern",
+    "role_or_note": "As a marketing intern at Ramy Brook, I worked closely with the art",
+    "images": 6
+  },
+  {
+    "page": 5,
+    "title": "Mad River",
+    "folder": "project-pages/page-05-mad-river",
+    "subtitle": "A Film",
+    "role_or_note": "Mad River was an incredible project to be part of. I was lucky to",
+    "images": 5
+  },
+  {
+    "page": 6,
+    "title": "ONE Pilates",
+    "folder": "project-pages/page-06-one-pilates",
+    "subtitle": "Detail Studio",
+    "role_or_note": "Through my work with Detail Studio, I had the opportunity to help",
+    "images": 4
+  },
+  {
+    "page": 7,
+    "title": "Tech A",
+    "folder": "project-pages/page-07-tech-a",
+    "subtitle": "In Class Project",
+    "role_or_note": "This semester in Technology A was my first experience learning to",
+    "images": 7
+  },
+  {
+    "page": 8,
+    "title": "Senior Thesis",
+    "folder": "project-pages/page-08-senior-thesis",
+    "subtitle": "Instalation",
+    "role_or_note": "In my senior thesis showcase I explored how images construct intima-",
+    "images": 6
+  }
+]

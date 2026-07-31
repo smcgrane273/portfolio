@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Looking Glass</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #070b11;
+      }
+
+      body {
+        cursor: crosshair;
+        touch-action: none;
+      }
+
+      .mirror {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 50% 12%, rgba(255, 230, 188, 0.12), transparent 24%),
+          linear-gradient(180deg, #202b35 0%, #0b1016 100%);
+      }
+
+      .camera,
+      .ambient,
+      .mist,
+      .fog,
+      .glass {
+        position: absolute;
+        inset: 0;
+      }
+
+      .camera {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scaleX(-1);
+        filter: saturate(0.72) contrast(1.05) brightness(0.9) blur(6px);
+        background:
+          radial-gradient(circle at 50% 10%, rgba(255, 229, 190, 0.24), transparent 22%),
+          linear-gradient(180deg, #25303a 0%, #121a22 100%);
+      }
+
+      .ambient {
+        pointer-events: none;
+        background:
+          radial-gradient(circle at 50% 10%, rgba(255, 241, 214, 0.18), transparent 20%),
+          radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.08), transparent 18%),
+          radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.08), transparent 18%);
+        mix-blend-mode: screen;
+        filter: blur(18px);
+        opacity: 0.8;
+      }
+
+      .mist {
+        pointer-events: none;
+        background:
+          radial-gradient(circle at 14% 16%, rgba(255, 255, 255, 0.14), transparent 18%),
+          radial-gradient(circle at 84% 24%, rgba(255, 255, 255, 0.12), transparent 22%),
+          radial-gradient(circle at 32% 78%, rgba(255, 255, 255, 0.1), transparent 20%),
+          radial-gradient(circle at 72% 68%, rgba(255, 255, 255, 0.08), transparent 24%);
+        mix-blend-mode: screen;
+        animation: drift 12s ease-in-out infinite alternate;
+      }
+
+      .fog {
+        width: 100%;
+        height: 100%;
+      }
+
+      .glass {
+        pointer-events: none;
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.14), transparent 22%, transparent 78%, rgba(255, 255, 255, 0.08)),
+          radial-gradient(circle at 50% 50%, transparent 40%, rgba(7, 12, 18, 0.52) 100%);
+        box-shadow:
+          inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+          inset 0 0 8rem rgba(255, 255, 255, 0.05),
+          inset 0 0 12rem rgba(0, 0, 0, 0.32);
+      }
+
+      @keyframes drift {
+        from {
+          transform: translate3d(-1.5%, -1.2%, 0) scale(1);
+        }
+        to {
+          transform: translate3d(1.5%, 1.2%, 0) scale(1.05);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="mirror" aria-label="Interactive fogged mirror">
+      <video class="camera" id="camera" autoplay muted playsinline></video>
+      <div class="ambient" aria-hidden="true"></div>
+      <div class="mist" aria-hidden="true"></div>
+      <canvas class="fog" id="fogCanvas"></canvas>
+      <div class="glass" aria-hidden="true"></div>
+    </main>
+
+    <script>
+      const video = document.getElementById("camera");
+      const canvas = document.getElementById("fogCanvas");
+      const ctx = canvas.getContext("2d");
+
+      let isDrawing = false;
+      let lastPoint = null;
+
+      async function startCamera() {
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({
+            video: {
+              facingMode: "user",
+              width: { ideal: 1920 },
+              height: { ideal: 1080 }
+            },
+            audio: false
+          });
+
+          video.srcObject = stream;
+          await video.play();
+        } catch (error) {
+          console.error("Camera access was blocked or unavailable.", error);
+        }
+      }
+
+      function random(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      function resizeCanvas() {
+        const rect = canvas.getBoundingClientRect();
+        const pixelRatio = Math.max(1, window.devicePixelRatio || 1);
+        canvas.width = Math.round(rect.width * pixelRatio);
+        canvas.height = Math.round(rect.height * pixelRatio);
+        ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+        paintFog();
+      }
+
+      function paintFog() {
+        const width = canvas.clientWidth;
+        const height = canvas.clientHeight;
+
+        ctx.clearRect(0, 0, width, height);
+
+        const base = ctx.createLinearGradient(0, 0, 0, height);
+        base.addColorStop(0, "rgba(228, 235, 239, 0.92)");
+        base.addColorStop(0.5, "rgba(213, 223, 230, 0.9)");
+        base.addColorStop(1, "rgba(193, 203, 210, 0.95)");
+        ctx.fillStyle = base;
+        ctx.fillRect(0, 0, width, height);
+
+        for (let i = 0; i < 26; i += 1) {
+          const cloud = ctx.createRadialGradient(
+            random(0, width),
+            random(0, height),
+            0,
+            random(0, width),
+            random(0, height),
+            random(width * 0.14, width * 0.35)
+          );
+          cloud.addColorStop(0, `rgba(255,255,255,${random(0.04, 0.11).toFixed(3)})`);
+          cloud.addColorStop(1, "rgba(255,255,255,0)");
+          ctx.fillStyle = cloud;
+          ctx.fillRect(0, 0, width, height);
+        }
+
+        ctx.strokeStyle = "rgba(255,255,255,0.16)";
+        ctx.lineCap = "round";
+
+        for (let i = 0; i < 40; i += 1) {
+          const startX = random(0, width);
+          const startY = random(-height * 0.08, height * 0.22);
+          const length = random(height * 0.14, height * 0.44);
+          ctx.lineWidth = random(1, 3.2);
+          ctx.beginPath();
+          ctx.moveTo(startX, startY);
+          ctx.bezierCurveTo(
+            startX + random(-20, 20),
+            startY + length * 0.32,
+            startX + random(-26, 26),
+            startY + length * 0.7,
+            startX + random(-12, 12),
+            startY + length
+          );
+          ctx.stroke();
+        }
+
+        const droplets = Math.floor((width * height) / 1500);
+        for (let i = 0; i < droplets; i += 1) {
+          const size = random(0.8, 2.6);
+          ctx.fillStyle = `rgba(255,255,255,${random(0.02, 0.07).toFixed(3)})`;
+          ctx.beginPath();
+          ctx.arc(random(0, width), random(0, height), size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        ctx.fillStyle = "rgba(255,255,255,0.05)";
+        ctx.fillRect(0, 0, width, height);
+      }
+
+      function clearAtPoint(x, y) {
+        const brush = ctx.createRadialGradient(x, y, 0, x, y, 72);
+        brush.addColorStop(0, "rgba(0,0,0,0.92)");
+        brush.addColorStop(0.35, "rgba(0,0,0,0.55)");
+        brush.addColorStop(0.7, "rgba(0,0,0,0.18)");
+        brush.addColorStop(1, "rgba(0,0,0,0)");
+
+        ctx.save();
+        ctx.globalCompositeOperation = "destination-out";
+        ctx.fillStyle = brush;
+        ctx.beginPath();
+        ctx.arc(x, y, 72, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      function clearLine(from, to) {
+        const distance = Math.hypot(to.x - from.x, to.y - from.y);
+        const steps = Math.max(1, Math.ceil(distance / 16));
+
+        for (let i = 0; i <= steps; i += 1) {
+          const t = i / steps;
+          clearAtPoint(
+            from.x + (to.x - from.x) * t,
+            from.y + (to.y - from.y) * t
+          );
+        }
+      }
+
+      function getPoint(event) {
+        const rect = canvas.getBoundingClientRect();
+        return {
+          x: event.clientX - rect.left,
+          y: event.clientY - rect.top
+        };
+      }
+
+      function beginDraw(event) {
+        isDrawing = true;
+        lastPoint = getPoint(event);
+        clearAtPoint(lastPoint.x, lastPoint.y);
+      }
+
+      function draw(event) {
+        if (!isDrawing) {
+          return;
+        }
+
+        const point = getPoint(event);
+        clearLine(lastPoint, point);
+        lastPoint = point;
+      }
+
+      function endDraw(event) {
+        if (event && canvas.hasPointerCapture(event.pointerId)) {
+          canvas.releasePointerCapture(event.pointerId);
+        }
+
+        isDrawing = false;
+        lastPoint = null;
+      }
+
+      canvas.addEventListener("pointerdown", (event) => {
+        canvas.setPointerCapture(event.pointerId);
+        beginDraw(event);
+      });
+      canvas.addEventListener("pointermove", draw);
+      canvas.addEventListener("pointerup", endDraw);
+      canvas.addEventListener("pointercancel", endDraw);
+      canvas.addEventListener("pointerleave", endDraw);
+
+      window.addEventListener("resize", resizeCanvas);
+
+      resizeCanvas();
+      startCamera();
+    </script>
+  </body>
+</html>

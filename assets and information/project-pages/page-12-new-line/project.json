@@ -1,0 +1,38 @@
+{
+  "page": 12,
+  "title": "What is a Line?",
+  "folder": "page-12-new-line",
+  "source_project_name": "What is a Line?",
+  "source_path": "/Users/sophie/Documents/updated information (cleaned 4.27.26) /new line ",
+  "source_status": "Original standalone project left untouched. A separate source reference copy was placed in this folder.",
+  "source_git_state": "not a git repository",
+  "source_copy": "source/index.original-copy.html",
+  "medium": "p5.js generative line drawing sketch",
+  "suggested_subtitle": "Creative Coding / Generative Design / Research",
+  "year": "2026",
+  "live_project_url": "https://editor.p5js.org/smcgrane/full/DJl1LgqO7",
+  "site_page": "project-what-is-a-line.html",
+  "archive_tags": [
+    "Interactive",
+    "Research"
+  ],
+  "primary_visual": "screenshots/new-line-wide-hero.jpg",
+  "archive_thumbnail": "screenshots/new-line-archive-thumb.jpg",
+  "screenshots": [
+    "screenshots/new-line-wide-hero.jpg",
+    "screenshots/new-line-archive-thumb.jpg",
+    "screenshots/new-line-bird-still.jpg",
+    "screenshots/new-line-morph-still.jpg"
+  ],
+  "key_interactions": [
+    "A single line morphs between simple object outlines.",
+    "The path uses resampled points for smooth transitions.",
+    "Noise adds subtle drift to the line.",
+    "Double-clicking the corner dot records a 12-second webm capture."
+  ],
+  "future_page_notes": [
+    "Good candidate for a generative-systems archive case study.",
+    "Use stills as pauses in the morphing sequence.",
+    "Capture a short video or GIF later to show the transformation over time."
+  ]
+}

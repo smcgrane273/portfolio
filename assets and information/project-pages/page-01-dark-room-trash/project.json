@@ -1,0 +1,23 @@
+{
+  "page": 1,
+  "title": "Dark Room Trash",
+  "subtitle": "A Study in Discard",
+  "role_or_note": "This book is a curation of the contents of a darkroom trash can. Neither",
+  "text": "Dark Room Trash\nA Study in Discard\nThis book is a curation of the contents of a darkroom trash can. Neither \nfound photography nor intentional creation, the images exist somewhere \nin between. Many of these photographs never saw the light. Their \npotential and full chemical development were only realized through my \nexploration of the material as I collected and assembled them into a book, \nexposing them to light in the process. The book was exhibited at the \nMoMA PS1 Art Book Fair in 2025.\n",
+  "source_pdf": "projects to add : translate .pdf",
+  "page_pdf": "page-01.pdf",
+  "page_screenshot": "page-01-preview.png",
+  "extracted_images": [
+    "images/image-01.jpg",
+    "images/image-02.jpg",
+    "images/image-03.jpg"
+  ],
+  "current_project_page": "project-dark-room-trash.html",
+  "layout_reference": "screenshots/dark-room-trash-layout-2026-05-31.png",
+  "current_web_images": [
+    "dark-room-trash-hero-2026-05-31.png",
+    "dark-room-trash-triptych-2026-05-31.png",
+    "dark-room-trash-material-wide-2026-05-31.png",
+    "dark-room-trash-home-cover-2026-05-31.png"
+  ]
+}

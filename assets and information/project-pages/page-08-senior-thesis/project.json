@@ -1,0 +1,34 @@
+{
+  "page": 8,
+  "title": "Dog and Pony Show",
+  "subtitle": "Thesis Showcase",
+  "role_or_note": "Photography, sculpture, and installation design thesis showcase.",
+  "text": "Dog and Pony Show\nThesis Showcase\nFormat: Photography / Sculpture / Installation Design\nFocus: Image / Space / Attention\n\nDog and Pony Show was staged as a thesis showcase around the act of looking: peering, circling, leaning in, and piecing together an image from partial views. The installation used small apertures, reflective surfaces, suspended objects, and photographed fragments to slow down the viewer's movement through the gallery.\n\nThe work asked visitors to negotiate distance and intimacy at the same time. Images were embedded inside sculptural forms, turning the gallery into a sequence of thresholds where a viewer had to use their body to complete the picture.\n\nThis work is in conversation with Interlude Time Capsule, specifically Peephole B2, which depicts a bookshelf filled with family heirlooms, including my great grandmother's silver tea set. The suspended etching isolates that object from its original setting and asks it to become both image and artifact.\n",
+  "source_pdf": "projects to add : translate .pdf",
+  "page_pdf": "page-08.pdf",
+  "page_screenshot": "page-08-preview.png",
+  "extracted_images": [
+    "images/image-01.png",
+    "images/image-02.jpg",
+    "images/image-03.jpg",
+    "images/image-04.jpg",
+    "images/image-05.png",
+    "images/image-06.jpg"
+  ],
+  "format": "Photography / Sculpture / Installation Design",
+  "focus": "Image / Space / Attention",
+  "updated": "2026-06-16",
+  "layout_reference": "screenshots/dog-and-pony-show-layout-2026-06-16.png",
+  "archive_thumbnail": "dog-and-pony-archive-cover-2026-06-16.png",
+  "current_assets": [
+    "dog-and-pony-peephole-hero-2026-06-16.png",
+    "dog-and-pony-viewer-left-2026-06-16.png",
+    "dog-and-pony-viewer-right-2026-06-16.png",
+    "dog-and-pony-gallery-view-2026-06-16.png",
+    "dog-and-pony-lens-reflection-2026-06-16.png",
+    "dog-and-pony-etched-tea-set-2026-06-16.png",
+    "dog-and-pony-hanging-sculpture-2026-06-16.png",
+    "dog-and-pony-shadow-study-2026-06-16.png",
+    "dog-and-pony-archive-cover-2026-06-16.png"
+  ]
+}

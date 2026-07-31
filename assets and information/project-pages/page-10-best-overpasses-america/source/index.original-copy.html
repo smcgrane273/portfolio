@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Highway Book</title>
+    <meta
+      name="description"
+      content="A restrained digital artist book of ten American overpasses and interchanges, presented one photograph at a time."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="book" aria-live="polite">
+      <button
+        class="turn-zone turn-zone-left"
+        id="previous"
+        type="button"
+        aria-label="Previous photograph"
+      ></button>
+
+      <section class="spread">
+        <figure class="plate" id="plate">
+          <img id="photo" src="" alt="">
+          <figcaption class="caption">
+            <p id="location"></p>
+          </figcaption>
+        </figure>
+      </section>
+
+      <button
+        class="turn-zone turn-zone-right"
+        id="next"
+        type="button"
+        aria-label="Next photograph"
+      ></button>
+    </main>
+
+    <div class="meta">
+      <button class="meta-toggle" id="meta-toggle" type="button" aria-expanded="false">
+        Credits
+      </button>
+      <div class="meta-panel" id="meta-panel" hidden>
+        <p id="counter"></p>
+        <a id="source-link" href="" target="_blank" rel="noreferrer">Source</a>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

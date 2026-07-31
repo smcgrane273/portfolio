@@ -1,0 +1,19 @@
+{
+  "page": 7,
+  "title": "Tech A",
+  "subtitle": "In Class Project",
+  "role_or_note": "This semester in Technology A was my first experience learning to",
+  "text": "Tech A\nIn Class Project \nThis semester in Technology A was my first experience learning to \ncode, and it opened up an entirely new way of thinking about systems, \nstorytelling, design, and data. At its core, this class became, for me, \nabout exploring the connective tissue of the world around us, the \nintangible systems and rhythms that quietly shape daily life made \nvisible through data, interaction, and the technologies at our fingertips.\nMy first project transformed the manual for a tide clock I had repaired \ninto a website, balancing the tiny mechanical details of coding and \nclock systems with the larger celestial rhythms that govern the device. \n(A,B,C) From there, continuing to explore the unseen systems that \nstructure daily life, I created an interactive world map visualizing New \nYork City’s food imports. This project allowed users to directly engage \nwith information about how everyday food items arrive where they do, \nincluding their global journeys and associated costs. (D)\nFor my final project, Drawing Time,(E) I built an interactive camera \nusing physical computing to record and composite data over a set\n period, creating a portrait of a specific space and moment in time. \nAcross these projects, I found a clear throughline: mapping and\n measurement, understanding how things arrive where they are, and \nmoving between the enormous and the minute to build a thoughtful \ndesign practice rooted in close attention and curiosity. Building on the \nthemes of the course, this work reflects an ongoing exploration of the \nbalance between technological interaction and the power of data.\nA\nB\nC D\nE",
+  "source_pdf": "projects to add : translate .pdf",
+  "page_pdf": "page-07.pdf",
+  "page_screenshot": "page-07-preview.png",
+  "extracted_images": [
+    "images/image-01.png",
+    "images/image-02.png",
+    "images/image-03.png",
+    "images/image-04.png",
+    "images/image-05.png",
+    "images/image-06.png",
+    "images/image-07.png"
+  ]
+}
