@@ -34,6 +34,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+@media (pointer: fine) {
+  html,
+  body,
+  a,
+  button,
+  [role="button"] {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Ccircle cx='4' cy='4' r='3' fill='%23111111'/%3E%3C/svg%3E") 4 4, auto;
+  }
+}
+
 .dot-field {
   position: fixed;
   inset: 0;
@@ -2563,6 +2573,361 @@ strong {
 
   .archive-grid--unified .archive-title {
     font-size: 1.45rem;
+  }
+}
+
+
+.listed-works-layout {
+  padding-top: 72px;
+}
+
+.listed-works-intro {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--grid-gap);
+  align-items: start;
+  margin-bottom: 112px;
+  padding: 0 57px;
+}
+
+.listed-works-intro h1 {
+  max-width: 560px;
+  color: var(--text);
+  font-size: 32px;
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.listed-works-note {
+  display: grid;
+  gap: 22px;
+  padding-top: 12px;
+}
+
+.listed-works-note p,
+.listed-work-meta p,
+.listed-section-heading p,
+.quiet-link {
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.18;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.quiet-link {
+  width: fit-content;
+  border-bottom: 1px solid var(--text);
+  padding-bottom: 3px;
+}
+
+.listed-works-section {
+  display: grid;
+  gap: 34px;
+  margin-top: 132px;
+  padding: 0 57px;
+}
+
+.listed-works-section:first-of-type {
+  margin-top: 0;
+}
+
+.listed-section-heading {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) minmax(220px, 340px);
+  gap: 24px;
+  align-items: baseline;
+  text-align: left;
+}
+
+.listed-section-heading h2 {
+  color: var(--text);
+  font-size: clamp(1.45rem, 2.2vw, 2.1rem);
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.listed-section-heading p:last-child {
+  max-width: 34em;
+  margin: 0;
+  text-transform: none;
+}
+
+.listed-works-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 86px 76px;
+  align-items: start;
+}
+
+.listed-works-grid--duo {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.listed-works-grid--trio {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 92px 76px;
+}
+
+.listed-work-card {
+  display: grid;
+  gap: 16px;
+}
+
+.listed-work-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.listed-work-frame img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  filter: grayscale(0.08) contrast(0.96) brightness(1.02);
+  opacity: 0.84;
+}
+
+.listed-work-meta {
+  display: grid;
+  gap: 6px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.listed-work-meta h3 {
+  color: var(--text);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 0.98;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.listed-work-inquire {
+  width: fit-content;
+  margin-top: 8px;
+  border-bottom: 1px solid var(--text);
+  padding-bottom: 3px;
+  color: var(--text);
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.listed-work-inquire:hover {
+  opacity: 0.72;
+}
+
+@media (max-width: 1024px) {
+  .listed-works-intro,
+  .listed-works-section {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .listed-works-intro {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 84px;
+  }
+
+  .listed-works-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 84px 42px;
+  }
+
+  .listed-works-grid--duo,
+  .listed-works-grid--trio {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .listed-works-layout {
+    width: min(calc(100% - 32px), 520px);
+    padding-top: 44px;
+    padding-bottom: 96px;
+  }
+
+  .listed-works-intro {
+    margin-bottom: 68px;
+  }
+
+  .listed-works-intro h1 {
+    font-size: 2rem;
+  }
+
+  .listed-works-grid {
+    grid-template-columns: 1fr;
+    gap: 68px;
+  }
+
+  .listed-works-grid--duo,
+  .listed-works-grid--trio {
+    grid-template-columns: 1fr;
+  }
+
+  .listed-works-section {
+    gap: 34px;
+    margin-top: 88px;
+  }
+
+  .listed-section-heading h2 {
+    font-size: 1.65rem;
+  }
+
+  .listed-work-meta h3 {
+    font-size: 1.45rem;
+  }
+}
+
+
+.ring-set-layout {
+  width: min(calc(100% - 220px), 1240px);
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 72px 0 140px;
+}
+
+.ring-set-intro {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 72px;
+  text-transform: uppercase;
+}
+
+.ring-set-intro h1,
+.ring-set-intro p,
+.ring-set-copy p {
+  margin: 0;
+  color: var(--text);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.ring-set-intro h1 {
+  font-size: 32px;
+  line-height: 1.08;
+  text-transform: uppercase;
+}
+
+.ring-set-intro p,
+.ring-set-copy p {
+  font-size: 14px;
+  line-height: 1.18;
+}
+
+.ring-set-meta {
+  display: grid;
+  gap: 0;
+}
+
+.ring-set-drawing-grid figure,
+.ring-set-photo-grid figure,
+.ring-set-wide,
+.ring-set-close-sketch {
+  margin: 0;
+}
+
+.ring-set-drawing-grid img,
+.ring-set-photo-grid img,
+.ring-set-wide img,
+.ring-set-close-sketch img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.ring-set-drawing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 76px;
+  align-items: start;
+}
+
+.ring-set-drawing-grid figure {
+  background: #f8f8f8;
+}
+
+.ring-set-drawing-grid img {
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+}
+
+.ring-set-copy {
+  display: grid;
+  gap: 18px;
+  width: min(100%, 760px);
+  margin: 88px auto 0;
+  text-align: center;
+}
+
+.ring-set-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 76px;
+  margin-top: 112px;
+  align-items: start;
+}
+
+.ring-set-wide {
+  margin-top: 112px;
+}
+
+.ring-set-close-sketch {
+  width: min(100%, 920px);
+  margin-top: 112px;
+  margin-right: auto;
+  margin-left: auto;
+  background: #f8f8f8;
+}
+
+@media (max-width: 1024px) {
+  .ring-set-layout {
+    width: auto;
+    padding: 52px 40px 120px;
+  }
+
+  .ring-set-intro {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ring-set-photo-grid,
+  .ring-set-drawing-grid {
+    gap: 42px;
+  }
+}
+
+@media (max-width: 720px) {
+  .ring-set-layout {
+    padding: 44px var(--pad-mobile) 104px;
+  }
+
+  .ring-set-intro {
+    margin-bottom: 52px;
+  }
+
+  .ring-set-drawing-grid,
+  .ring-set-photo-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin-top: 72px;
+  }
+
+  .ring-set-wide,
+  .ring-set-close-sketch,
+  .ring-set-copy {
+    margin-top: 72px;
   }
 }
 
