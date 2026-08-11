@@ -2555,8 +2555,8 @@ strong {
 
 /* Unified archive flow */
 .archive-grid--unified {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 116px 72px;
+  grid-template-columns: repeat(2, minmax(420px, 1fr));
+  gap: 120px 80px;
   padding: 0 57px 140px;
   align-items: start;
 }
@@ -2568,12 +2568,15 @@ strong {
 }
 
 .archive-grid--unified .archive-frame {
-  margin-bottom: 12px;
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
 }
 
 .archive-grid--unified .archive-frame img {
-  aspect-ratio: 4 / 3;
   width: 100%;
+  height: 100%;
   object-fit: contain;
   background: transparent;
   filter: grayscale(0.08) contrast(0.96) brightness(1.02);
@@ -2609,7 +2612,7 @@ strong {
 @media (max-width: 1024px) {
   .archive-grid--unified {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 82px 34px;
+    gap: 84px 36px;
     padding: 0 0 112px;
   }
 }
