@@ -2555,40 +2555,40 @@ strong {
 
 /* Unified archive flow */
 .archive-grid--unified {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 112px 76px;
-  padding: 0 57px 128px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 116px 72px;
+  padding: 0 57px 140px;
   align-items: start;
 }
 
 .archive-grid--unified .archive-item {
-  gap: 6px;
+  gap: 8px;
   color: var(--text);
   text-transform: uppercase;
 }
 
 .archive-grid--unified .archive-frame {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .archive-grid--unified .archive-frame img {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   width: 100%;
-  object-fit: cover;
-  background: var(--surface);
+  object-fit: contain;
+  background: transparent;
   filter: grayscale(0.08) contrast(0.96) brightness(1.02);
-  opacity: 0.84;
+  opacity: 0.9;
 }
 
 .archive-grid--unified .archive-item--placeholder .archive-frame img,
 .archive-grid--unified .archive-item:not(.archive-item--asset) .archive-frame img {
   filter: grayscale(0.45) contrast(0.86) brightness(1.08);
-  opacity: 0.48;
+  opacity: 0.58;
 }
 
 .archive-grid--unified .archive-title {
   color: var(--text);
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-size: clamp(1.35rem, 2.35vw, 2rem);
   line-height: 0.98;
   letter-spacing: 0;
 }
@@ -2596,7 +2596,7 @@ strong {
 .archive-subtitle {
   display: block;
   color: var(--text-muted);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   line-height: 1.08;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -2609,7 +2609,7 @@ strong {
 @media (max-width: 1024px) {
   .archive-grid--unified {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 84px 42px;
+    gap: 82px 34px;
     padding: 0 0 112px;
   }
 }
