@@ -413,6 +413,21 @@ strong {
   display: block;
 }
 
+.pointillist-live-media {
+  width: min(calc(100% - 114px), 920px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pointillist-live-media .live-project-embed {
+  aspect-ratio: 4 / 3;
+  background: #f4f0ea;
+}
+
+.pointillist-live-media .external-project-link {
+  margin-left: 0;
+}
+
 .external-project-link {
   display: inline-block;
   width: fit-content;

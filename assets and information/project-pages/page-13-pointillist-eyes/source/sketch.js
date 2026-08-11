@@ -89,7 +89,7 @@ function buildBuffer() {
   if (!imgLoaded || imgLoadError || !activeImg) return;
 
   const cropRect = getCropRect(activeImg, params.crop);
-  fit = fitRectCover(cropRect.w, cropRect.h, windowWidth, windowHeight);
+  fit = fitRectContain(cropRect.w, cropRect.h, windowWidth, windowHeight);
 
   renderPointillism(activeImg, cropRect, fit, pg);
 
@@ -169,19 +169,17 @@ function windowResized() {
   buildBuffer();
 }
 
-function fitRectCover(sw, sh, dw, dh) {
+function fitRectContain(sw, sh, dw, dh) {
   const sRatio = sw / sh;
   const dRatio = dw / dh;
   let w, h, x, y;
 
   if (sRatio > dRatio) {
-    // Source is wider: scale by height, crop left/right
-    h = dh;
-    w = dh * sRatio;
-  } else {
-    // Source is taller: scale by width, crop top/bottom
     w = dw;
     h = dw / sRatio;
+  } else {
+    h = dh;
+    w = dh * sRatio;
   }
 
   x = (dw - w) / 2;
