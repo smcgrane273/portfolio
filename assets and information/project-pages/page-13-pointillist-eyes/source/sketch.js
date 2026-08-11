@@ -79,12 +79,12 @@ function buildBuffer() {
   pg = createGraphics(windowWidth, windowHeight);
   pg.pixelDensity(1);
   pg.noStroke();
-  pg.background('#f4f0ea');
+  pg.clear();
 
   pgClosed = createGraphics(windowWidth, windowHeight);
   pgClosed.pixelDensity(1);
   pgClosed.noStroke();
-  pgClosed.background('#f4f0ea');
+  pgClosed.clear();
 
   if (!imgLoaded || imgLoadError || !activeImg) return;
 
@@ -103,7 +103,7 @@ function buildBuffer() {
 // Draw
 // -----------------------------
 function draw() {
-  background('#f4f0ea');
+  clear();
 
   if (imgLoadError) {
     drawErrorMessage();
@@ -218,12 +218,15 @@ function renderPointillism(image, cropRect, fitRect, target) {
 
       const b = brightness(c); // 0..100
       const t = 1 - (b / 100); // darker -> larger
+      if (t < 0.08) continue;
+
       const d = lerp(1.2, params.maxDot, t) * (fitRect.w / cropRect.w);
+      const alpha = params.dotAlpha * constrain(t * 2.4, 0, 1);
 
       const dx = map(sampleX - cropRect.x, 0, cropRect.w, fitRect.x, fitRect.x + fitRect.w);
       const dy = map(sampleY - cropRect.y, 0, cropRect.h, fitRect.y, fitRect.y + fitRect.h);
 
-      target.fill(red(c), green(c), blue(c), params.dotAlpha);
+      target.fill(red(c), green(c), blue(c), alpha);
       target.ellipse(dx, dy, d, d);
     }
   }
