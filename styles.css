@@ -3164,3 +3164,122 @@ strong {
 ) img {
   display: block;
 }
+
+/* Dune MV project */
+.dune-project-page {
+  --bg: #eeeeee;
+}
+
+.dune-layout {
+  width: min(calc(100% - 220px), 1120px);
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 182px 0 140px;
+}
+
+.dune-intro {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 80px;
+  align-items: start;
+  text-transform: uppercase;
+}
+
+.dune-intro h1,
+.dune-intro p,
+.dune-copy p {
+  margin: 0;
+  color: var(--text);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.dune-intro h1 {
+  font-size: 28px;
+  line-height: 1.08;
+}
+
+.dune-intro p,
+.dune-copy p {
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.dune-meta {
+  display: grid;
+  gap: 0;
+}
+
+.dune-copy {
+  width: min(100%, 900px);
+  margin-top: 52px;
+}
+
+.dune-board {
+  width: min(100%, 760px);
+  margin: 72px auto 0;
+}
+
+.dune-board img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .dune-layout {
+    width: auto;
+    padding: 140px 40px 120px;
+  }
+
+  .dune-intro {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 720px) {
+  .dune-layout {
+    padding: 92px var(--pad-mobile) 104px;
+  }
+
+  .dune-intro h1 {
+    font-size: 25px;
+  }
+
+  .dune-intro p,
+  .dune-copy p {
+    font-size: 11px;
+  }
+
+  .dune-copy,
+  .dune-board {
+    margin-top: 56px;
+  }
+}
+
+.dune-project-page .dot-field {
+  display: block;
+}
+
+.dune-project-page .dune-layout {
+  padding: 140px 0;
+}
+
+.dune-project-page .dune-board {
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .dune-project-page .dune-layout {
+    padding: 120px 40px;
+  }
+}
+
+@media (max-width: 720px) {
+  .dune-project-page .dune-layout {
+    padding: 92px var(--pad-mobile) 104px;
+  }
+}
