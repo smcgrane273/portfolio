@@ -2555,16 +2555,18 @@ strong {
 
 /* Unified archive flow */
 .archive-grid--unified {
-  grid-template-columns: repeat(2, minmax(420px, 1fr));
-  gap: 120px 80px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 112px;
   padding: 0 57px 140px;
   align-items: start;
+  justify-items: center;
 }
 
 .archive-grid--unified .archive-item {
   gap: 8px;
   color: var(--text);
   text-transform: uppercase;
+  width: min(100%, 980px);
 }
 
 .archive-grid--unified .archive-frame {
@@ -2611,8 +2613,8 @@ strong {
 
 @media (max-width: 1024px) {
   .archive-grid--unified {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 84px 36px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 84px;
     padding: 0 0 112px;
   }
 }
