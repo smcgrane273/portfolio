@@ -2993,6 +2993,10 @@ strong {
   display: none;
 }
 
+.store-180-page .dot-field {
+  display: block;
+}
+
 .store-180-layout {
   width: min(calc(100% - 220px), 1240px);
   max-width: 1240px;
@@ -3272,6 +3276,10 @@ strong {
   margin: 0 auto;
 }
 
+.dune-project-page .dune-board + .dune-board {
+  margin-top: 96px;
+}
+
 @media (max-width: 1024px) {
   .dune-project-page .dune-layout {
     padding: 120px 40px;
@@ -3281,5 +3289,9 @@ strong {
 @media (max-width: 720px) {
   .dune-project-page .dune-layout {
     padding: 92px var(--pad-mobile) 104px;
+  }
+
+  .dune-project-page .dune-board + .dune-board {
+    margin-top: 64px;
   }
 }
